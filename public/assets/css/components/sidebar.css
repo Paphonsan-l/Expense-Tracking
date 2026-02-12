@@ -1,0 +1,102 @@
+/* Sidebar Styles */
+
+.sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    overflow-y: auto;
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: var(--spacing-md) 0;
+}
+
+.menu-item {
+    margin: var(--spacing-xs) var(--spacing-md);
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.menu-item a i {
+    width: 24px;
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.menu-item a span {
+    font-weight: 500;
+}
+
+.menu-item a:hover {
+    background-color: var(--bg-secondary);
+    color: var(--primary-color);
+}
+
+.menu-item a:hover i {
+    color: var(--primary-color);
+}
+
+.menu-item.active a {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--primary-color);
+}
+
+.menu-item.active a i {
+    color: var(--primary-color);
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed .menu-item a span {
+    display: none;
+}
+
+.sidebar.collapsed .menu-item {
+    margin: var(--spacing-xs);
+}
+
+.sidebar.collapsed .menu-item a {
+    justify-content: center;
+}
